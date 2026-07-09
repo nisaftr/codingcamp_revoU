@@ -1,0 +1,145 @@
+/* Custom Variables for Light & Dark Mode */
+:root[data-theme="light"] {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --accent: #2ecc71;
+    --danger: #e74c3c;
+    --border-color: #dddddd;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --card-bg: #2d2d2d;
+    --text-main: #f5f5f5;
+    --accent: #2ecc71;
+    --danger: #e74c3c;
+    --border-color: #444444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 15px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.balance-card, .form-section, .list-section, .chart-container {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.balance-card {
+    text-align: center;
+}
+#total-balance {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.form-group {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--card-bg);
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+.row input { flex: 1; }
+
+.mt-4 { margin-top: 15px; }
+
+.btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-primary { background-color: var(--accent); color: white; }
+.btn-secondary { background-color: #95a5a6; color: white; width: auto; }
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#sort-filter {
+    padding: 5px;
+    border-radius: 4px;
+    background: var(--card-bg);
+    color: var(--text-main);
+}
+
+.scrollable-list {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#transaction-list {
+    list-style: none;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item-details span {
+    display: block;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
